@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
   get 'dittys/index'
 
   get 'dittys/show'
