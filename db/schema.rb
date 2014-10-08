@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20141008221127) do
     t.datetime "updated_at"
   end
 
+ActiveRecord::Schema.define(version: 20141008212509) do
+
   create_table "ditties", force: true do |t|
     t.text     "body"
     t.string   "player"

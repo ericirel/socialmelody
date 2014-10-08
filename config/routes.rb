@@ -1,40 +1,11 @@
 Rails.application.routes.draw do
-  get 'comments/create'
 
-  get 'dittys/index'
+  resources :users
+  resources :diddies do
+    resources :comments
+  end
 
-  get 'dittys/show'
-
-  get 'dittys/new'
-
-  get 'dittys/create'
-
-  get 'dittys/edit'
-
-  get 'dittys/update'
-
-  get 'dittys/destroy'
-
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destory'
-
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/destroy'
-
+  root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
