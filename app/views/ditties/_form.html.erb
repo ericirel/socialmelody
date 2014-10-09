@@ -1,6 +1,17 @@
+<div id="inputs">
+
 <%= form_for @ditty do |f| %>
+
   <%= f.text_area :player %>
   <%= f.text_area :body %>
   <%= f.submit %>
-</input>
+
   <% end %>
+
+	<div>
+		<span id="message"></span>
+	</div>
+</div>
+
+<div id="players">
+</div>

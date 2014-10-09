@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+
+#inputs input {
+	width: 170px;
+}
+#inputs textarea {
+	width: 170px;
+}

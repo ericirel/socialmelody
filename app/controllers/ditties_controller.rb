@@ -13,7 +13,7 @@ class DittiesController < ApplicationController
   end
 
   def create
-    @ditty = Ditty.new(ditty_params)
+    @ditty = Ditty.new(ditties_params)
     if @ditty.save
       flash[:notice] = "New ditty posted"
       redirect_to @ditty
@@ -42,9 +42,19 @@ class DittiesController < ApplicationController
     redirect_to users_path
   end
 
-  private
+  private 
+
+  def ditties_params
+      params.require(:ditty).permit(:body, :player)
+  end
+
 
   def set_ditty
     @ditty = Ditty.find(params[:id])
   end
+
+
 end
+
+
+

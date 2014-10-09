@@ -2,13 +2,40 @@
 <html>
 <head>
   <title>Socialmelody</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
+
 <%= yield %>
+
+	<script>
+$(document).ready(function(){
+
+$('#submit').click(function(){
+	if ($('#linkInput').html().indexOf('soundcloud.com') !== -1) {
+		$('#message').text('fetching player...');
+		getPlayer($('#linkInput').html(), function(response) {
+			$('#players').append(response.html);
+			$('#message').text('done');
+		});
+	} else {
+		$('#message').text('Must input proper soundcloud link');
+	}
+});
+
+var getPlayer = function(link, callback) {
+	$.getJSON('http://soundcloud.com/oembed?format=js&url=' + link + '&iframe=true&callback=?', callback);
+};
+});
+	</script>
+
+	
+
 
 </body>
 </html>

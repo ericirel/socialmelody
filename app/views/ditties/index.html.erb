@@ -1,6 +1,6 @@
 <h1>Your Ditty feed</h1>
 <ul>
-  <% @user.ditties.each do |ditty| %>
+  <% @ditties.all.each do |ditty| %>
   <%= ditty.player %>
   <%= ditty.body %>
   <%end %>
