@@ -11,7 +11,20 @@
 
 </head>
 <body>
-
+  <header>
+    <nav>
+      <% if current_user %>
+        <%= "Hello #{current_user.username}" %> |
+        <%= link_to "logout", logout_path, method: :delete %> |
+        <%= link_to "Compose a Ditty!", new_ditty_path %>
+      <% else %>
+         <%= link_to "Sign up", new_user_path %> |
+         <%= link_to "Sign in", new_session_path %>
+      <% end %>
+    </nav>
+ </header>
+<%= flash[:notice] if flash[:notice] %>
+<%= flash[:alert] if flash[:alert] %>
 
 <%= yield %>
 
@@ -36,7 +49,7 @@ var getPlayer = function(link, callback) {
 });
 	</script>
 
-	
+
 
 
 </body>

@@ -14,9 +14,9 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destory
-    @user = User.find(session[:user_id])
+  def destroy
+   # @session = User.find(current_user)
     session[:user_id] = nil
-    redirect_to @user
+    redirect_to root_path
   end
 end
