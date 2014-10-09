@@ -32,9 +32,9 @@
 $(document).ready(function(){
 
 $('#submit').ready(function(){
-	if ($('#linkInput').html().indexOf('soundcloud.com') !== -1) {
+	if ($('.linkInput').html().indexOf('soundcloud.com') !== -1) {
 		// $('#message').text('fetching player...');
-		getPlayer($('#linkInput').html(), function(response) {
+		getPlayer($('.linkInput').html(), function(response) {
 			$('.players').append(response.html);
 			// $('#message').text('done');
 		});

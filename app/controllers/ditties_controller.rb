@@ -1,5 +1,5 @@
 class DittiesController < ApplicationController
-    before_action :set_ditty, only: [:show, :edit, :update, :destroy]
+    before_action :set_ditty, only: [:edit, :update, :destroy]
   def index
     @ditties = Ditty.all
   end
