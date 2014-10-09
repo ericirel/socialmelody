@@ -18,12 +18,12 @@
 	<script>
 $(document).ready(function(){
 
-$('#submit').click(function(){
+$('#submit').ready(function(){
 	if ($('#linkInput').html().indexOf('soundcloud.com') !== -1) {
-		$('#message').text('fetching player...');
+		// $('#message').text('fetching player...');
 		getPlayer($('#linkInput').html(), function(response) {
 			$('#players').append(response.html);
-			$('#message').text('done');
+			// $('#message').text('done');
 		});
 	} else {
 		$('#message').text('Must input proper soundcloud link');
