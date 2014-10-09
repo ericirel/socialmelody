@@ -3,10 +3,16 @@
 <br>
 <br>
 <ul>
-  <% @ditties.each do |ditty| %>
-  <div id="linkInput" style="display:none;"><%= ditty.player %> </div>
+  <% @ditties.all.each do |ditty| %>
+  <div class="linkInput" >
+<%= ditty.player %> 
+  	</div>
 
-  <div class="players"> <%= ditty.body %></div>
+<br>
+  <div class="players"> 
+
+
+  	<%= ditty.body %></div>
   
   <%end %>
 
