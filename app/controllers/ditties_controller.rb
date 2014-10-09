@@ -1,9 +1,11 @@
 class DittiesController < ApplicationController
+    before_action :set_ditty, only: [:show, :edit, :update, :destroy]
   def index
     @ditties = Ditty.all
   end
 
   def show
+    @ditty = Ditty.find(params[:id])
   end
 
   def new
@@ -17,7 +19,7 @@ class DittiesController < ApplicationController
       redirect_to @ditty
     else
       flash[:notice] = "Something went wrong."
-      redirect_to @ditty
+      render :new
     end
   end
 
@@ -38,5 +40,11 @@ class DittiesController < ApplicationController
     @ditty.destroy
     flash[:notice] = "Ditty deleted"
     redirect_to users_path
+  end
+
+  private
+
+  def set_ditty
+    @ditty = Ditty.find(params[:id])
   end
 end

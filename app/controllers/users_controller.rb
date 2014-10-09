@@ -34,6 +34,7 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "Something went wrong"
       render :edit
+    end
   end
 
   def destroy
@@ -43,6 +44,7 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "Something went wrong"
       redirect_to users_path
+    end
   end
 
   private

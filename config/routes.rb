@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :users
-  resources :diddies do
+  resources :ditties do
     resources :comments
   end
 

@@ -1,2 +1,7 @@
-<h1>Dittys#index</h1>
-<p>Find me in app/views/dittys/index.html.erb</p>
+<h1>Your Ditty feed</h1>
+<ul>
+  <% @user.ditties.each do |ditty| %>
+  <%= ditty.player %>
+  <%= ditty.body %>
+  <%end %>
+</ul>
