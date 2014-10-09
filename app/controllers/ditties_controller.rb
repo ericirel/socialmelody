@@ -6,6 +6,8 @@ class DittiesController < ApplicationController
 
   def show
     @ditty = Ditty.find(params[:id])
+    @comment = Comment.new
+    # @comment.ditty_id = @ditty.id
   end
 
   def new
@@ -42,7 +44,7 @@ class DittiesController < ApplicationController
     redirect_to users_path
   end
 
-  private 
+  private
 
   def ditties_params
       params.require(:ditty).permit(:body, :player)
