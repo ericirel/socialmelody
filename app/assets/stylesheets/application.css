@@ -15,9 +15,17 @@
  */
 
 
+
 #inputs input {
 	width: 170px;
 }
 #inputs textarea {
 	width: 170px;
+
+ body{
+  background-color: #fafafa;
+ }
+
+ul{
+   list-style: none;
 }

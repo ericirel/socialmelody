@@ -7,7 +7,8 @@
 <p>Bio: <%=@user.bio %></p>
 <h3><%= @user.fname %>'s ditties</h3>
 <ul>
-  <% @user.ditty.each do |ditty| %>
+  <% @user.ditties.each do |ditty| %>
+  <li><%= link_to ditty.player, ditty %></li>
   <li><%= link_to ditty.body, ditty %></li>
   <% end %>
 </ul>
