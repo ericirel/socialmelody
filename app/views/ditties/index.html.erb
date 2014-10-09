@@ -1,7 +1,14 @@
 <h1>Your Ditty feed</h1>
+
+<br>
+<br>
 <ul>
-  <% @ditties.all.each do |ditty| %>
-  <%= ditty.player %>
-  <%= ditty.body %>
+  <% @ditties.each do |ditty| %>
+  <div id="linkInput" style="display:none;"><%= ditty.player %> </div>
+
+  <div class="players"> <%= ditty.body %></div>
+  
   <%end %>
+
 </ul>
+
