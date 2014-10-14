@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'comments/new'
+
+  get 'comments/create'
+
+  get 'comments/destroy'
+
   resources :users
   resources :ditties do
     resources :comments

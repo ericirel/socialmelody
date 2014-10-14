@@ -7,7 +7,7 @@ class DittiesController < ApplicationController
   def show
     @ditty = Ditty.find(params[:id])
     @comment = Comment.new
-    # @comment.ditty_id = @ditty.id
+    # @comment = Comment.where(params[:id])
   end
 
   def new
@@ -18,7 +18,7 @@ class DittiesController < ApplicationController
     @ditty = Ditty.new(ditties_params)
     if @ditty.save
       flash[:notice] = "New ditty posted"
-      redirect_to @ditty
+      redirect_to @ditties
     else
       flash[:notice] = "Something went wrong."
       render :new

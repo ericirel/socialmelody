@@ -14,8 +14,11 @@
 </div>
 
 <h3>Discuss</h3>
-     <%= @ditty.comments %>
-  <%= render partial: 'comments/form' %>
+<%= render partial: 'comments/form' %>
+<ul>
+  <%= @comment.body %>
+</ul>
+
 
 
 <script>

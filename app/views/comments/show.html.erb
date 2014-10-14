@@ -1,0 +1,22 @@
+<div class="linkInput" style="display:none;"><%= @ditty.player %></div>
+<h2><%= @ditty.body %></h2>
+<p>by <%# @ditty.user.username %></p>
+
+
+<!-- <a id="submit" >click</a> -->
+<!--
+<div>
+  <span id="message"></span>
+</div> -->
+
+
+<div class="players">
+</div>
+
+<h3>Discuss</h3>
+<%= render partial: 'comments/form' %>
+
+<ul>
+  <% @comments.all.each do |comment| %>
+  <%= comment.body %>
+</ul>
